@@ -13,6 +13,7 @@ public class ArraytoArraylist {
 		
 		List al = Arrays.asList(ar);
 		System.out.println(al);
+		//System.out.println(al.lastSet());
 		
 		
 		/*List al = new ArrayList(Arrays.asList(ar));
