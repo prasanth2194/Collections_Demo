@@ -6,7 +6,7 @@ import java.util.Comparator;
 import java.util.Iterator;
 import java.util.List;
 
-public class Client implements Comparator {
+public class Client {
 
 	public static void main(String[] args) {
 
@@ -38,24 +38,31 @@ public class Client implements Comparator {
 
 		}
 		System.out.println("After Sorting");
-		Collections.sort(e, new Client());
+		Collections.sort(e, new Comparator() {
+			public int compare(Object o1, Object o2) {
+
+				Employee e1 = (Employee) o1;
+				Employee e2 = (Employee) o2;
+				Long s1 = e1.getSalary();
+				Long s2 = e2.getSalary();
+
+				return s2.compareTo(s1);
+			}
+		});
 		// System.out.println(e);
 		Iterator i1 = e.iterator();
 		while (i1.hasNext()) {
 			System.out.println(i1.next());
 		}
-
 	}
-
-	@Override
-	public int compare(Object o1, Object o2) {
-		Employee e1 = (Employee) o1;
-		Employee e2=(Employee) o2;
-		Long s1=e1.getSalary();
-		Long s2=e2.getSalary();
-		
-		return s2.compareTo(s1);
-		
-	}
-
 }
+
+// @Override
+/*
+ * public int compare(Object o1, Object o2) { Employee e1 = (Employee) o1;
+ * Employee e2=(Employee) o2; Long s1=e1.getSalary(); Long s2=e2.getSalary();
+ * 
+ * return s2.compareTo(s1);
+ * 
+ * }
+ */
