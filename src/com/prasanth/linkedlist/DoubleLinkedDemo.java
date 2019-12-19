@@ -15,6 +15,20 @@ public class DoubleLinkedDemo {
 		}
 
 	}
+	Node reverse() 
+    { 
+        Node prev = null; 
+        Node current = head; 
+        Node next = null; 
+        while (current != null) { 
+            next = current.next; 
+            current.next = prev; 
+            prev = current; 
+            current = next; 
+        } 
+        head = prev; 
+        return head; 
+    } 
 
 	Node head, tail = null;
 	public void atBeggining(int data){
@@ -104,7 +118,10 @@ public class DoubleLinkedDemo {
 			d.addinter(18, 2);
 			d.addinter(32, 4);
 			d.atBeggining(63);
+	
 			
+			d.printList();
+			d.reverse();
 			d.printList();
 			
 			

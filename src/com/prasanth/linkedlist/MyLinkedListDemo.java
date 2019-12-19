@@ -113,7 +113,20 @@ public class MyLinkedListDemo {
         head = prev; 
         return head; 
     } 
-	
+	public void deleteFirst(){
+		if(head==null){
+			System.out.println("list is empty");
+		}
+		else{
+			if(head!=null){
+				head=head.next;
+				
+			}
+			else{
+				head=null;
+			}
+		}
+	}
 	/*
 	 * public void insertAfter(Node previous, int new_data) { new_data=14; Node
 	 * new_node = new Node(new_data); if (previous == null) {
@@ -131,6 +144,8 @@ public class MyLinkedListDemo {
 		l.insertNth(45, 2);
 		l.printList();
 		l.reverse();
+		l.printList();
+		l.deleteFirst();
 		l.printList();
 		
 		
